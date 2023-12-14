@@ -1,3 +1,15 @@
+numsDict = {
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9"
+}
+
 sum = 0
 
 input = open("input.txt", "r")
@@ -12,36 +24,11 @@ for line in input:
         # "eightwoeightwo"
         else:
             scanningString += char
-            print(scanningString)
-            if "one" in scanningString:
-                digitString += "1"
-                scanningString = scanningString[-1]
-            elif "two" in scanningString:
-                digitString += "2"
-                scanningString = scanningString[-1]
-            elif "three" in scanningString:
-                digitString += "3"
-                scanningString = scanningString[-1]
-            elif "four" in scanningString:
-                digitString += "4"
-                scanningString = scanningString[-1]
-            elif "five" in scanningString:
-                digitString += "5"
-                scanningString = scanningString[-1]
-            elif "six" in scanningString:
-                digitString += "6"
-                scanningString = scanningString[-1]
-            elif "seven" in scanningString:
-                digitString += "7"
-                scanningString = scanningString[-1]
-            elif "eight" in scanningString:
-                digitString += "8"
-                scanningString = scanningString[-1]
-            elif "nine" in scanningString:
-                digitString += "9"
-                scanningString = scanningString[-1]
+            for key in numsDict:
+                if key in scanningString:
+                    digitString += numsDict[key]
+                    scanningString = scanningString[-1]
             
     lineValue = int(digitString[0] + digitString[-1])
-    print(lineValue)
     sum += lineValue
 print(sum)

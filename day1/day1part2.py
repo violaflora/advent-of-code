@@ -11,7 +11,6 @@ numsDict = {
 }
 
 sum = 0
-
 input = open("input.txt", "r")
 for line in input:
     digitString = ""
@@ -27,8 +26,7 @@ for line in input:
             for key in numsDict:
                 if key in scanningString:
                     digitString += numsDict[key]
-                    scanningString = scanningString[-1]
-            
+                    scanningString = scanningString[-1] 
     lineValue = int(digitString[0] + digitString[-1])
     sum += lineValue
 print(sum)
